@@ -1,0 +1,10 @@
+title: Ubuntu 常用命令
+author: haibo
+tags:
+  - Ubuntu
+  - bash
+categories:
+  - 技術
+date: 2021-05-23 22:05:00
+---
+> Ubuntu 常用命令
