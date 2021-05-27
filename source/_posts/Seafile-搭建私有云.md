@@ -1,15 +1,12 @@
 ---
 title: Seafile 搭建私有云一：搭建Seafile（80%）
+author: haibo
 date: 2021-05-27 11:43:49
 updated: 2021-05-27 11:43:49
----
-title: Seafile 搭建私有云一：搭建Seafile（80%）
-author: haibo
 tags:
   - Seafile
 categories:
   - 技術
-date: 2021-05-23 22:00:00
 ---
 > 記錄一下自己搭建私有云的過程
 > TODO: 恢復，
