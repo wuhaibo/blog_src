@@ -9,7 +9,8 @@ author: haibo
 tags:
 * python
 * pandas
-  categories:
+
+categories:
 * 技術
   date: 2021-05-23 22:06:00
 - - -
