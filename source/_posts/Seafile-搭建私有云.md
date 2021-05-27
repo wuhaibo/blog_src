@@ -1,7 +1,7 @@
 ---
-title: Seafile 搭建私有云一：搭建Seafile（80%）
+title: Seafile 搭建私有云一：搭建Seafile
 author: haibo
-description: 記錄一下自己搭建私有云的過程
+description: 記錄一下自己搭建私有云的過程.
 date: 2021-05-27 11:43:49
 updated: 2021-05-27 11:43:49
 tags:
@@ -10,16 +10,15 @@ categories:
   - 技術
 ---
 > 記錄一下自己搭建私有云的過程
-> TODO: 恢復，
+>
 > TODO: 重啓memcache解決avatars圖片錯誤
 > TODO: ubuntu 定時任務
 > TODO:
 
-
-
 <!--more-->
 
 ## 目標
+
 本文假設要把seafile用以docker的形式安裝在ubuntu 18上. 
 然後使用ngnix作爲反向代理實現https。 
 
@@ -30,7 +29,9 @@ categories:
 ```bash
 sudo apt-get install docker-compose -y
 ```
+
 ### 準備docker-compose.yml文件
+
 ```yml
 version: '2.0'
 services:
@@ -79,27 +80,31 @@ networks:
 ```
 
 這裏要把
-```MYSQL_ROOT_PASSWORD```， ```DB_ROOT_PASSWD```，```SEAFILE_ADMIN_EMAIL```，```SEAFILE_ADMIN_PASSWORD```，```SEAFILE_SERVER_HOSTNAME```
+`MYSQL_ROOT_PASSWORD`， `DB_ROOT_PASSWD`，`SEAFILE_ADMIN_EMAIL`，`SEAFILE_ADMIN_PASSWORD`，`SEAFILE_SERVER_HOSTNAME`
 設定為自己需要的值。
 
 另外
+
 ```yml
 networks:
   seafile-net:
 ```
-這裏表明這個文件的services共用一個叫 ```seafile-net```的網絡。
 
-docker Seafile service 于主機共享了  ```/opt/seafile-data（host）:/shared（container）```
+這裏表明這個文件的services共用一個叫 `seafile-net`的網絡。
+
+docker Seafile service 于主機共享了  `/opt/seafile-data（host）:/shared（container）`
 
 ### 啓動Seafile server
+
 ```yml
 networks:
   seafile-net:
 ```
 
 ### Log Path
-- ```/opt/seafile-data/logs/seafile``` 是seafile的日志
-- ```/opt/seafile-data/logs/seafile``` 是container的日志
+
+* `/opt/seafile-data/logs/seafile` 是seafile的日志
+* `/opt/seafile-data/logs/seafile` 是container的日志
 
 ### 備份和恢復
 
@@ -108,7 +113,6 @@ networks:
 #### 建立備份脚本
 
 ```bash
-
 cronjob_name="backupSeafile"
 today=$(date +%Y%m%d_%I%M%S)
 log_file="/home/williamwood/cronjob/cronjob.log"
@@ -134,27 +138,24 @@ docker exec -it seafile-mysql mysqldump  -uroot -p$password$ --opt seahub_db > /
 echo "seafile database backup done" >> $log_file
 
 echo "**********************************end***********************************" >> $log_file
-
 ```
 
 #### 創建cronjob
 
-- 以root賬戶執行cronjob脚本
+* 以root賬戶執行cronjob脚本
 
 ```bash
 sudo cronjob -e
 ```
 
-- 脚本執行后寫入任務執行時間和執行脚本
+* 脚本執行后寫入任務執行時間和執行脚本
 
 <img src="https://res.cloudinary.com/dr8wkuoot/image/upload/v1621939199/blog/cronjob_fvbqfw.jpg">
 
-
-
 ### 恢復
 
-
 #### 恢復database
+
 ```bash
 docker cp /opt/seafile-backup/databases/ccnet_db.sql seafile-mysql:/tmp/ccnet_db.sql
 docker cp /opt/seafile-backup/databases/seafile_db.sql seafile-mysql:/tmp/seafile_db.sql
@@ -165,8 +166,16 @@ docker exec -it seafile-mysql /bin/sh -c "mysql -uroot -p$psd$ seafile_db < /tmp
 docker exec -it seafile-mysql /bin/sh -c "mysql -uroot -p$psd$ seahub_db < /tmp/seahub_db.sql"
 ```
 
-
 #### 恢復Seafile data
+
 ```bash
 cp -R /opt/seafile-backup/data/* /opt/seafile-data/seafile/
+```
+
+### 坑
+
+*  問題：修改網站地址后（比如測試時用了ip作爲網址，後來改為域名），資源網址沒改，導致錯誤avatars圖片錯誤。
+*  解決辦法，重啓memcached 
+```bash
+docker restart seafile-memcached
 ```
