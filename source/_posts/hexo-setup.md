@@ -1,3 +1,15 @@
+---
+title: Hexo Setup
+date: 2021-05-27 11:48:44
+updated: 2021-05-27 11:48:44
+tags:
+  - blog
+  - Hexo
+  - github
+  - github page
+categories:
+  - 技術
+---
 title: Hexo Setup
 categories:
   - 技術
