@@ -1,3 +1,8 @@
+---
+title: Seafile 搭建私有云一：搭建Seafile（80%）
+date: 2021-05-27 11:43:49
+updated: 2021-05-27 11:43:49
+---
 title: Seafile 搭建私有云一：搭建Seafile（80%）
 author: haibo
 tags:
