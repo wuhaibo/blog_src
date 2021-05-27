@@ -1,3 +1,8 @@
+---
+title: Ubuntu 常用命令
+date: 2021-05-27 11:45:30
+updated: 2021-05-27 11:45:30
+---
 title: Ubuntu 常用命令
 author: haibo
 tags:
