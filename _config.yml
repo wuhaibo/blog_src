@@ -11,6 +11,10 @@ author: haibo
 language: en
 timezone: ''
 
+# CMS backend
+netlify_cms:
+  config_file: netlify.yaml
+
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
 url: https://wuhaibo.github.io
