@@ -10,10 +10,6 @@ categories:
   - 技術
 ---
 > 記錄一下自己搭建私有云的過程
->
-> TODO: 重啓memcache解決avatars圖片錯誤
-> TODO: ubuntu 定時任務
-> TODO:
 
 <!--more-->
 
