@@ -168,10 +168,11 @@ docker exec -it seafile-mysql /bin/sh -c "mysql -uroot -p$psd$ seahub_db < /tmp/
 cp -R /opt/seafile-backup/data/* /opt/seafile-data/seafile/
 ```
 
-### 坑
+## 碰到的問題
 
-*  問題：修改網站地址后（比如測試時用了ip作爲網址，後來改為域名），資源網址沒改，導致錯誤avatars圖片錯誤。
-*  解決辦法，重啓memcached 
+* 問題：修改網站地址后（比如測試時用了ip作爲網址，後來改為域名），資源網址沒改，導致錯誤avatars圖片錯誤。
+* 解決辦法，重啓memcached 
+
 ```bash
 docker restart seafile-memcached
 ```
