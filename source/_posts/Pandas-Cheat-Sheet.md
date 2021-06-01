@@ -1,5 +1,6 @@
 ---
 title: Pandas Cheat Sheet
+description: Pandas Cheat Sheet
 date: 2021-05-27 11:41:00
 updated: 2021-05-27 11:41:00
 tags:
@@ -9,9 +10,10 @@ categories:
 ---
 > Pandas Cheat Sheet
 
-ref：https://geektutu.com/post/pandas-cheat-sheet-zh-cn/Pandas_Cheat_Sheet_zh_CN.pdf
+
 
 ## 创建dataframe
+
 ```python
 # 按列创建
 df = pd.DataFrame(
@@ -27,9 +29,10 @@ df = pd.DataFrame(
   [6, 9, 12]],
   index=[1, 2, 3],
   columns=['a', 'b', 'c'])
-
 ```
+
 ## 改变dataframe
+
 ```python
 # 按照某列的值进行行排序
 df.sort_values('mpg')
@@ -47,8 +50,8 @@ df.reset_index()
 
 # 移除特定列
 df.drop(columns=['Length','Height'])
-
 ```
+
 ## 添加新列
 
 ```python
@@ -82,11 +85,9 @@ data.loc[4] = 0 # or give a new serie like [3,2,1]
 
 # use append 一次多行
 data.append(pd.DataFrame([[2,3,4]],columns=['a','b','c']), ignore_index = True)
-
 ```
 
 ## 按行或者列取得dataframe子集
-
 
 ```python
 # 筛选满足逻辑表达式的数据
@@ -107,9 +108,10 @@ df[['width','length','species']]
 
 # 选取指定的单列
 df['width'] or df.width
-
 ```
+
 ## dataframe 拼接
+
 ```python
 # 行拼接
 pd.concat([df1,df2])
@@ -117,10 +119,10 @@ pd.concat([df1,df2])
 # 列拼接
 # DataFrames的列拼接
 pd.concat([df1,df2], axis=1)
-
 ```
 
 ## 两个dataframe join，类似table join
+
 ```python
 # -*- coding: utf-8 -*-
 """
@@ -164,11 +166,10 @@ result = pd.merge(left, right, how="right", on=["key1", "key2"])
 
 # outer join
 result = pd.merge(left, right, how="outer", on=["key1", "key2"])
-
 ```
 
-
 ## 汇总函数
+
 ```python
 sum()
 count() # 统计non-na的个数
@@ -182,15 +183,12 @@ var() # 方差
 std() # 标准差
 ```
 
-
 ## 处理缺失
-```python
 
+```python
 # 去掉含有NA值的行
 df.dropna()
 
 # 将所有的NA/null值替换为value
 df.fillna(value)
-
 ```
-
