@@ -10,8 +10,6 @@ categories:
 ---
 > Pandas Cheat Sheet
 
-
-
 ## 创建dataframe
 
 ```python
@@ -52,11 +50,11 @@ df.reset_index()
 df.drop(columns=['Length','Height'])
 ```
 
-## 添加新列
+## 添加新列或者新行
 
 ```python
 in [1]: import pandas as pd
-	 	import numpy as np
+	import numpy as np
 in [2]: data = pd.DataFrame(np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]]), columns=['a', 'b', 'c'])
 in [3]: data
 out[3]:
