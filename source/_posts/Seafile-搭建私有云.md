@@ -9,9 +9,15 @@ tags:
 categories:
   - 技術
 ---
-> 記錄一下自己搭建私有云的過程
+> 記錄一下自己搭建私有云的過程。这里主要介绍seafile的部分。
+>
+> 过程分两个博文
+>
+> [Seafile 搭建私有云一：搭建Seafile](https://friendly-mcnulty-50c07e.netlify.app/2021/05/27/seafile-%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BA%91/)
+>
+> [Seafile 搭建私有云之二：ngnix ssl 反向代理](https://friendly-mcnulty-50c07e.netlify.app/2021/06/01/seafile-%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BA%91%E4%B9%8B%E4%BA%8C%EF%BC%9Angnix-ssl-%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86/)
 
-<!--more-->
+
 
 ## 目標
 
