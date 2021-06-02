@@ -15,8 +15,6 @@ comments: false
 netsh wlan show profile name=$wlanName$ key=clear
 ```
 
-
-
 ### Get windows Service with execute path
 
 ```powershell
@@ -31,7 +29,6 @@ ftp $destination$
 ## ? for help
 ## ! escape the cmd to shell
 ## send file use put
-
 ```
 
 ### Get scheduled job/tasks
@@ -41,5 +38,10 @@ schtasks /query /v /fo LIST
 
 ## powershell, this is not working for windows before windows 2012
 get-scheduledtask | get-scheduledtaskinfo | select TaskName, TaskPath
+```
 
+### find file
+
+```
+dir /s *foo*.txt
 ```
