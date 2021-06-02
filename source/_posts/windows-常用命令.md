@@ -45,3 +45,39 @@ get-scheduledtask | get-scheduledtaskinfo | select TaskName, TaskPath
 ```
 dir /s *foo*.txt
 ```
+
+
+
+## IIS
+
+### Tool to View the IIS Log : Logparser
+
+<https://blogs.msdn.microsoft.com/friis/2014/02/06/how-to-analyse-iis-logs-using-logparser-logparser-studio/>
+
+### Use Cmd to Export/Import IIS Websites
+
+```powershell
+# To Export the Application Pools
+%windir%\system32\inetsrv\appcmd list apppool /config /xml > c:\apppools.xml
+
+# To import  the Application Pools
+%windir%\system32\inetsrv\appcmd add apppool /in < c:\apppools.xml
+
+# To Export all your website:
+%windir%\system32\inetsrv\appcmd list site /config /xml > c:\sites.xml
+
+# To Import all your website:
+%windir%\system32\inetsrv\appcmd add site /in < c:\sites.xml
+
+# To export/import a single application pool:
+##export
+%windir%\system32\inetsrv\appcmd list apppool “MyAppPool” /config /xml > c:\myapppool.xml
+##import
+%windir%\system32\inetsrv\appcmd add apppool /in < c:\myapppool.xml
+
+# To export/import a single website:
+##export
+%windir%\system32\inetsrv\appcmd list site “MyWebsite” /config /xml > c:\mywebsite.xml
+##import
+%windir%\system32\inetsrv\appcmd add site /in < c:\mywebsite.xml
+```
