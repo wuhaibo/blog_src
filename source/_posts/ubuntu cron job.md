@@ -19,7 +19,7 @@ sudo systemctl enable cron
 sudo services --status-all 
 ```
 
-### Add Cron Job
+## Add Cron Job
 
 ```shell
 # 1. add/edit cron jobs using interactive manner, edit or add cron job according to following format
