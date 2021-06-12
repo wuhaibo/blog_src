@@ -92,4 +92,6 @@ CMD ["cron", "-f"]
   ```CMD [ "sh", "-c", "echo $HOME" ]```。使用 shell 模式时，docker 会以 /bin/sh -c "task command" 的方式执行任务命令。也就是说容器中的 1 号进程不是任务进程而是 bash 进程
 
 ### Note
+
+
 - 在DockerFile中写入的CMD后面的命令不执行主要是因为启动的时候指定了shell
