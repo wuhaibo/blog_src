@@ -10,7 +10,7 @@ categories:
 comments: true
 ---
 
-### image相關
+### Image相關
 ```shell
 # 編譯image
 sudo docker build -t $imagename$ $Path_to_Dockerfile$
@@ -23,7 +23,7 @@ sudo docker image rm $imageName$
 
 ```
 
-### container相關
+### Container相關
 
 ```shell
 # 得到正在運行的container
@@ -52,7 +52,7 @@ sudo docker container cp [containID]:[/path/to/file]
 
 ```
 
-### dockerfile 相關
+### Dockerfile 相關
 一個例子：https://github.com/wuhaibo/python_cron_job_in_docker
 
 
