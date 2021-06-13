@@ -1,5 +1,7 @@
 ---
 title: Pandas Cheat Sheet
+cover: https://cdn.jsdelivr.net/gh/Spoience/js@v0.2/cover/onekey-dd-vps.webp
+top_image: https://p.zhheo.com/N3Acvm23190681623119491155.png!cover
 description: Pandas Cheat Sheet
 date: 2021-05-27 11:41:00
 updated: 2021-05-27 11:41:00
