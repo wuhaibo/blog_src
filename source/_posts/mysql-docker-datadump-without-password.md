@@ -1,7 +1,7 @@
 ---
 title: mysql datadump without password
 author: haibo
-description: ">
+description: "
   很多時候需要執行mysql脚本，在執行脚本的時候需要指定用戶名密碼，把密碼放在脚本裏不太安全，本文介紹一種方法，把密碼放在配置文件中，脚本執行的時候會自動\
   從配置文件中讀取密碼。"
 date: 2021-05-27 11:50:18
