@@ -164,3 +164,7 @@ pd.DataFrame(result_array).to_csv('2021nasdaqWinRate.csv')
 ```
 
 這個策略對納斯達克100的股票進行了測試，在等權重的基礎上，從2019到2021，其中每年的平均買入正確率都為72%
+
+具體數據：
+
+https://docs.google.com/spreadsheets/d/1hWFfn15Xzu6Xzp2dtDMH8ZDNpQPBBpGFhNKHwhuzNic/edit#gid=0
