@@ -42,7 +42,7 @@ MACD是一種趨勢分析指標，不宜同時分析不同的市場環境。以�
 代碼如下
 
 ```python
-# git commit d85cafc0021b3591e314dd88c43ac0bc50b8eb92
+# git commit 19ae4aa7bd271b557c7f6e94bb3a9d6aa1c132ea
 
 # strategy
 import backtrader as bt
