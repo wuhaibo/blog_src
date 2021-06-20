@@ -146,7 +146,7 @@ start_cash = 1000000
 
 
 ############### test all nasdaq stocks ###############
-nasdaq_ticker_list = hbDataLoader.get_component_list_df_by_index('^DAX')
+nasdaq_ticker_list = hbDataLoader.get_component_list_df_by_index('^NDX')
 counter = 0
 win_rate = 0
 result_array = []
