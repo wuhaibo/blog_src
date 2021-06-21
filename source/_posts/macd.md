@@ -233,3 +233,22 @@ https://docs.google.com/spreadsheets/d/1hWFfn15Xzu6Xzp2dtDMH8ZDNpQPBBpGFhNKHwhuz
 ```
 
 這個策略也對納斯達克100的股票進行了測試，在等權重的基礎上，從2019到2021，其中每年的平均買入正確率也都為68%左右.
+
+## 交易信號2買入賣出測試
+
+```python
+   
+   def get_sell_sig(self):
+    
+        # 交易信號2: buy when histo turn from nagative to positive
+        if self.macd.histo[0] < 0 and self.macd.histo[-1] > 0:
+           return True
+        return False
+      
+    def get_buy_sig(self,his_line):
+         # 交易信號2: buy when histo turn from nagative to positive
+         if his_line.histo[0] > 0 and his_line.histo[-1] < 0:
+            return True
+```
+
+對納斯達克100的股票進行了測試，從2019到2021，平均回報率為34%
