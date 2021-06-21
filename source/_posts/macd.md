@@ -253,8 +253,6 @@ https://docs.google.com/spreadsheets/d/1hWFfn15Xzu6Xzp2dtDMH8ZDNpQPBBpGFhNKHwhuz
 
 對納斯達克100的股票進行了測試，從2019到2021，平均回報率為34%
 
-
-
 ## 交易信號3買入賣出測試
 
 ```python
@@ -319,3 +317,23 @@ def get_buy_sig(self,his_line):
 ```
 
 對納斯達克100的股票進行了測試，從2019到2021，平均回報率為54%
+
+## 交易信號1買入賣出測試
+
+
+
+```
+    def get_sell_sig(self):
+
+        # 交易信號1: 
+        if self.macd.macd[0] < 0 and self.macd.macd[-1] > 0:
+            return True
+            
+   def get_buy_sig(self):
+
+        # 交易信號1: buy when macd turn from nagative to positive
+        if self.macd.macd[0] > 0 and self.macd.macd[-1] < 0:
+            return True
+```
+
+對納斯達克100的股票進行了測試，從2019到2021，平均回報率為43%
