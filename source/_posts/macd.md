@@ -180,6 +180,20 @@ pd.DataFrame(result_array).to_csv('2021nasdaqWinRate.csv')
 
 https://docs.google.com/spreadsheets/d/1hWFfn15Xzu6Xzp2dtDMH8ZDNpQPBBpGFhNKHwhuzNic/edit#gid=0
 
+## 交易信號1買入測試：差离值由下而上穿过零轴
+
+```python
+    def macd_buy_if_his_positive(self,his_line):
+
+        # 交易信號1: buy when macd turn from nagative to positive
+        if his_line.macd[0] > 0 and his_line.macd[-1] < 0:
+            return True
+```
+
+這個策略對納斯達克100的股票進行了測試，在等權重的基礎上，從2019到2021，其中每年的平均買入正確率都為69.39%
+
+
+
 ## 交易信號3買入測試：直方圖從負值變成正值并且MACD(快綫)也是正的
 
  買入策略的小更改，增加買在股價上升的 山腰上的概率。
