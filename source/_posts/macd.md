@@ -168,3 +168,26 @@ pd.DataFrame(result_array).to_csv('2021nasdaqWinRate.csv')
 具體數據：
 
 https://docs.google.com/spreadsheets/d/1hWFfn15Xzu6Xzp2dtDMH8ZDNpQPBBpGFhNKHwhuzNic/edit#gid=0
+
+## MACD 買入之直方圖從負值變成正值并且MACD也是正的
+
+ 買入策略的小更改，增加買在股價上升的 山腰上的概率。
+
+```python
+    # buy if macd his bigger than 0 
+    def macd_buy_if_his_positive(self,his_line):
+        
+        # buy when histo turn from nagative to positive
+        #if his_line.histo[0] > 0 and his_line.histo[-1] < 0:
+        #    return True
+        
+        
+        if his_line.histo[0] > 0 and his_line.histo[-1] < 0:
+            self.can_buy = True
+
+        if self.can_buy and his_line.histo[0] > 0 and his_line.macd[0] > 0:
+                self.can_buy = False
+                return True
+        return False
+```
+這個策略也對納斯達克100的股票進行了測試，在等權重的基礎上，從2019到2021，其中每年的平均買入正確率也都為72%左右
