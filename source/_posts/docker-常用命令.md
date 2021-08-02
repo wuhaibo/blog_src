@@ -26,6 +26,9 @@ sudo docker image rm $imageName$
 ### Container相關
 
 ```shell
+# run container
+sudo docker run -d --name $containerName$ $ImageName$
+
 # 得到正在運行的container
 sudo docker container ls
 
