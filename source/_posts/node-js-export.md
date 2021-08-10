@@ -21,7 +21,7 @@ module.exports.debug = function(msg){
 }
 
 // app.js
-var logger = require('./log')
+const logger = require('./log')
 log.debug("hello world")
 ```
 
@@ -38,7 +38,7 @@ logger.debug = function(msg){
 module.exports = logger
 
 // app.js
-var logger = require('./log')
+const logger = require('./log')
 log.debug("hello world")
 ```
 
@@ -57,7 +57,7 @@ logger.error = function(msg)
 module.exports = logger
 
 // app.js
-var { error } = require('./log')
+const { error } = require('./log')
 error("hello world")
 ```
 
