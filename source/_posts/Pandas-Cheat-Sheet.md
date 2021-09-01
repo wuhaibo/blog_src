@@ -92,7 +92,8 @@ data.append(pd.DataFrame([[2,3,4]],columns=['a','b','c']), ignore_index = True)
 
 ```python
 # 筛选满足逻辑表达式的数据
-df[df.Length > 7]
+df[df['Length'] > 7]
+df[(df['col1'] > 120)&(df['col2']<200)]
 
 # 移除重复行 (仅考虑列)
 df.drop_duplicates()
@@ -193,3 +194,24 @@ df.dropna()
 # 将所有的NA/null值替换为value
 df.fillna(value)
 ```
+
+## 判断dataframe是否为空
+```python
+df = pd.DataFrame(cols=['test']) 
+df.empty
+```
+
+## "Unnamed:0" in DataFrame
+```python
+
+df.to_csv('df.csv',index=False)
+```
+## dataframe行数
+```python
+
+df.shape[0]
+```
+
+## dict to dataframe
+## add rows to dataframe from list of dict
+# df get value of cell
