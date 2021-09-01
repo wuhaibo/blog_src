@@ -30,6 +30,14 @@ df = pd.DataFrame(
   [6, 9, 12]],
   index=[1, 2, 3],
   columns=['a', 'b', 'c'])
+
+# create from list of dict
+
+dict_list = [
+    {'id':1,'name':'testname1'},
+    {'id':2,'name':'testname2'},
+]
+df2 = pd.DataFrame(dict_list)
 ```
 
 ## 改变dataframe
@@ -86,6 +94,17 @@ data.loc[4] = 0 # or give a new serie like [3,2,1]
 
 # use append 一次多行
 data.append(pd.DataFrame([[2,3,4]],columns=['a','b','c']), ignore_index = True)
+
+# 从list添加 use list of dict
+cols = ['id','name']
+df = pd.DataFrame(columns = cols)
+
+dict_list = [
+    {'id':1,'name':'testname1'},
+    {'id':2,'name':'testname2'},
+]
+df = df.append(dict_list)
+
 ```
 
 ## 按行或者列取得dataframe子集
@@ -212,6 +231,3 @@ df.to_csv('df.csv',index=False)
 df.shape[0]
 ```
 
-## dict to dataframe
-## add rows to dataframe from list of dict
-# df get value of cell
